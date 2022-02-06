@@ -1,0 +1,21 @@
+{
+  "name": "auto-pull",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Inori-Lover/auto-pull.git"
+  },
+  "keywords": ["zx","git","shell"],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Inori-Lover/auto-pull/issues"
+  },
+  "homepage": "https://github.com/Inori-Lover/auto-pull#readme",
+  "dependencies": {
+    "zx": "^4.3.0"
+  }
+}
