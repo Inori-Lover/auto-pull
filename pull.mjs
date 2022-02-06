@@ -45,9 +45,17 @@ for (const child of childrenName) {
   }
 
   if (isGitFolder(childPath)) {
-    // @todo 处理window下路径转换问题
-    const bashPath = "/" + childPath.replace(":/", "/");
-    await $`cd ${bashPath} && git fetch --prune --prune-tags --all --tags --verbose`;
+    try {
+      console.log("");
+      console.log(chalk.green(new Date().toJSON() + ":"), "begin >>>");
+      cd(childPath);
+      await $`git fetch --prune --prune-tags --all --tags --quiet`;
+
+      console.log(chalk.green(new Date().toJSON() + ":"), "done <<<");
+    } catch (e) {
+      // 控制台本来就有输出，这里吃掉error就行
+      console.log(chalk.red(new Date().toJSON() + ":"), "error <<<");
+    }
   } else {
     // @todo 递归
   }
